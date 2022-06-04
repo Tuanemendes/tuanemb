@@ -4,6 +4,7 @@
  */
 package tuanemb;
 
+import java.sql.Connection;
 import tuanemb.gui.JanelaPrincipal;
 
 /**
@@ -17,8 +18,10 @@ public class Principal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
         JanelaPrincipal janelaPrincipal = new JanelaPrincipal();
         janelaPrincipal.show();
+        
     }
     
 }
