@@ -10,36 +10,37 @@ package tuanemb.model;
  */
 public class Scripts {
  /**   
-CREATE SCHEMA IF NOT EXISTS `tuanemb`;
+  * 
+CREATE DATABASE tuanemb;
 USE `tuanemb` ;
 
 -- -----------------------------------------------------
 -- Table `tuanemb`.`Medico`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tuanemb`.`Medico` (
-  `idMedico` INT NOT NULL,
-  `Nome` VARCHAR(80) NULL,
-  `Especialidade` VARCHAR(60) NULL,
-  `CRM` INT(15) NULL,
-  `CPF` VARCHAR(11) NULL,
+  `idMedico` INT NOT NULL AUTO_INCREMENT,
+  `Nome` VARCHAR(100) NOT NULL,
+  `Especialidade` VARCHAR(80) NOT NULL,
+  `CRM` INT NOT NULL,
+  `CPF` VARCHAR(14) NOT NULL,
   PRIMARY KEY (`idMedico`));
 
 -- -----------------------------------------------------
 -- Table `tuanemb`.`Paciente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tuanemb`.`Paciente` (
-  `idPaciente` INT NOT NULL,
-  `Nome` VARCHAR(80) NULL,
-  `CPF` VARCHAR(11) NULL,
-  `Idade` INT(3) NULL,
+  `idPaciente` INT NOT NULL AUTO_INCREMENT,
+  `Nome` VARCHAR(100) NOT NULL,
+  `CPF` VARCHAR(14) NOT NULL,
+  `Idade` INT NOT NULL,
   PRIMARY KEY (`idPaciente`));
-
+  
 -- -----------------------------------------------------
 -- Table `tuanemb`.`Consulta`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tuanemb`.`Consulta` (
-  `idConsulta` INT NOT NULL,
-  `Convenio` VARCHAR(45) NULL,
+  `idConsulta` INT NOT NULL AUTO_INCREMENT ,
+  `Convenio` VARCHAR(80) NOT NULL,
   `Medico_idMedico` INT NOT NULL,
   `Paciente_idPaciente` INT NOT NULL,
   PRIMARY KEY (`idConsulta`),

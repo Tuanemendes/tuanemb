@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/1_Faculdade%20SI/7º%20Período/DEsenvolvimento%20com%20Framework/tuanemb/tuanemb/src/tuanemb/gui/JanelaPrincipal.java</file>
-            <file>file:/D:/1_Faculdade%20SI/7º%20Período/DEsenvolvimento%20com%20Framework/tuanemb/tuanemb/src/tuanemb/gui/MedicoGui.java</file>
-            <file>file:/D:/1_Faculdade%20SI/7º%20Período/DEsenvolvimento%20com%20Framework/tuanemb/tuanemb/src/tuanemb/gui/PacienteGui.java</file>
+            <file>file:/D:/1_Faculdade%20SI/7º%20Período/DEsenvolvimento%20com%20Framework/tuanemb/tuanemb/src/tuanemb/dao/ConsultaDao.java</file>
+            <file>file:/D:/1_Faculdade%20SI/7º%20Período/DEsenvolvimento%20com%20Framework/tuanemb/tuanemb/src/tuanemb/gui/ConsultaGui.java</file>
+            <file>file:/D:/1_Faculdade%20SI/7º%20Período/DEsenvolvimento%20com%20Framework/tuanemb/tuanemb/src/tuanemb/model/Consulta.java</file>
+            <file>file:/D:/1_Faculdade%20SI/7º%20Período/DEsenvolvimento%20com%20Framework/tuanemb/tuanemb/src/tuanemb/model/Medico.java</file>
         </group>
     </open-files>
 </project-private>
