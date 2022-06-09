@@ -70,7 +70,7 @@ public class ConsultaGui extends javax.swing.JFrame {
         btnCadastrar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelaConsulta = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -286,7 +286,7 @@ public class ConsultaGui extends javax.swing.JFrame {
                 .addGap(21, 21, 21))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -312,7 +312,7 @@ public class ConsultaGui extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(tabelaConsulta);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("Lista Convênio:");
@@ -424,8 +424,12 @@ public class ConsultaGui extends javax.swing.JFrame {
         }else{
             Consulta consulta = new Consulta();
             consulta.setConvenio(edtConvenio.getText().trim());
-            consulta.setId(Long.parseLong(edtIdMedico.getText().trim()));
-            consulta.setId(Long.parseLong(edtIdPaciente.getText().trim()));
+            Medico medico = new Medico();
+            medico.setId(Long.parseLong(edtIdMedico.getText().trim()));
+            consulta.setMedico(medico);
+            Paciente paciente = new Paciente();
+            paciente.setId(Long.parseLong(edtIdPaciente.getText().trim()));
+            consulta.setPaciente(paciente);
             String msg;
             if(consulta.getId()== null){
                 msg = consultaDao.cadastrarConsulta(consulta);
@@ -435,7 +439,7 @@ public class ConsultaGui extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, msg);
             }
             this.limparCampos();
-            
+            this.preecherTebelaConsulta(); 
         } 
         
     }//GEN-LAST:event_btnCadastrarActionPerformed
@@ -498,7 +502,7 @@ public class ConsultaGui extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tabelaConsulta;
     private javax.swing.JTable tabelaMedicos;
     private javax.swing.JTable tabelaPaciente;
     // End of variables declaration//GEN-END:variables
@@ -529,6 +533,20 @@ public class ConsultaGui extends javax.swing.JFrame {
         
         }
     }
+     
+    // preeeche a tabala do convenio  que tem relacionamento com medico e paciente 
+    private void preecherTebelaConsulta() {
+        ArrayList consultas;
+        DefaultTableModel tabela = (DefaultTableModel)tabelaConsulta.getModel();
+        tabela.setRowCount(0);
+        consultas = consultaDao.listaConsulta();
+        Iterator iterator = consultas.iterator();
+        while(iterator.hasNext()){
+            Consulta consulta = (Consulta)iterator.next();
+            tabela.addRow(new Object[] {consulta.getId(), consulta.getMedico().getId(),consulta.getPaciente().getId(),consulta.getConvenio()});
+        
+        }
+    }    
         //limpar os campos convenio idmedico e idpaciente
         private void limparCampos(){
             edtConvenio.setText("");

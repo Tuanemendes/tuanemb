@@ -30,7 +30,7 @@ public class ConsultaDao extends Conexao{
        
        try {
            ArrayList consultas = new ArrayList();
-           String sentenca = "SELECT * FROM CONSULTA ORDER BY NOME";
+           String sentenca = "SELECT * FROM CONSULTA ORDER BY IDCONSULTA";
            ResultSet resultSet = this.getResultSet(sentenca);
            
            while(resultSet.next()) {
@@ -39,8 +39,10 @@ public class ConsultaDao extends Conexao{
                consulta.setConvenio(resultSet.getString("CONVENIO"));
                Medico medico = new Medico();
                medico.setId(resultSet.getLong("MEDICO_IDMEDICO"));
+               consulta.setMedico(medico);
                Paciente paciente = new Paciente();
                paciente.setId(resultSet.getLong("PACIENTE_IDPACIENTE"));
+               consulta.setPaciente(paciente);
                consultas.add(consulta);
            }
            return consultas;

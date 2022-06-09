@@ -29,7 +29,7 @@ public class PacienteDao extends Conexao{
        
        try {
            ArrayList pacientes = new ArrayList();
-           String sentenca = "SELECT * FROM PACIENTE ORDER BY NOME";
+           String sentenca = "SELECT * FROM PACIENTE ORDER BY IDPACIENTE";
            ResultSet resultSet = this.getResultSet(sentenca);
            
            while(resultSet.next()) {

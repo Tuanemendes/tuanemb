@@ -28,7 +28,7 @@ public class MedicoDao extends Conexao{
        
        try {
            ArrayList medicos = new ArrayList();
-           String sentenca = "SELECT * FROM MEDICO ORDER BY NOME";
+           String sentenca = "SELECT * FROM MEDICO ORDER BY IDMEDICO";
            ResultSet resultSet = this.getResultSet(sentenca);
            
            while(resultSet.next()) {

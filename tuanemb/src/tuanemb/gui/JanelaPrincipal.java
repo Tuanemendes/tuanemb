@@ -117,7 +117,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(rootPane,  "SISTEMA DE CADASTRO\nDESENVOLVIDO POR TUANE MENDES");   
+        JOptionPane.showMessageDialog(rootPane,"SISTEMA DE CADASTRO\nDESENVOLVIDO POR TUANE MENDES");   
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
